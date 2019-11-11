@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" prefix="dct: http://purl.org/dc/terms/ gvo: https://graphviz.makethingsmakesense.com/ontology# owl: http://www.w3.org/2002/07/owl# rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs: http://www.w3.org/2000/01/rdf-schema# vann: http://purl.org/vocab/vann/ xhv: http://www.w3.org/1999/xhtml/vocab# xsd: http://www.w3.org/2001/XMLSchema#" vocab="http://www.w3.org/1999/xhtml/vocab#" xml:lang="en">
+  <head>
+    <title about="#" property="dct:title">GraphViz Configuration Ontology</title>
+    <base href="https://graphviz.makethingsmakesense.com/ontology"/>
+  </head>
+  <body about="#" typeof="owl:Ontology">
+    <dl>
+      <dt>Namespace Prefix:</dt>
+      <dd property="vann:preferredNamespacePrefix" datatype="xsd:token">gvo</dd>
+    </dl>
+    <section id="classes">
+      <h2>Classes</h2>
+      <section id="Config" about="#Config" typeof="owl:Class">
+        <h3 property="rdfs:label" datatype="xsd:string">Config</h3>
+        <footer>
+          <a rel="rdfs:isDefinedBy" href="#">Back to Top</a>
+        </footer>
+      </section>
+      <section id="NodeConfig" about="#NodeConfig" typeof="owl:Class">
+        <h3 property="rdfs:label" datatype="xsd:string">NodeConfig</h3>
+        <dl>
+          <dt>Subclass of</dt>
+          <dd><a rel="rdfs:subClassOf" href="#Config">gvo:Config</a></dd>
+        </dl>
+        <footer>
+          <a rel="rdfs:isDefinedBy" href="#">Back to Top</a>
+        </footer>
+      </section>
+      <section id="EdgeConfig" about="#EdgeConfig" typeof="owl:Class">
+        <h3 property="rdfs:label" datatype="xsd:string">EdgeConfig</h3>
+        <dl>
+          <dt>Subclass of</dt>
+          <dd><a rel="rdfs:subClassOf" href="#Config">gvo:Config</a></dd>
+        </dl>
+        <footer>
+          <a rel="rdfs:isDefinedBy" href="#">Back to Top</a>
+        </footer>
+      </section>
+      <section id="GraphConfig" about="#GraphConfig" typeof="owl:Class">
+        <h3 property="rdfs:label" datatype="xsd:string">GraphConfig</h3>
+        <dl>
+          <dt>Subclass of</dt>
+          <dd><a rel="rdfs:subClassOf" href="#Config">gvo:Config</a></dd>
+        </dl>
+        <footer>
+          <a rel="rdfs:isDefinedBy" href="#">Back to Top</a>
+        </footer>
+      </section>
+      <section id="SubGraphConfig" about="#SubGraphConfig" typeof="owl:Class">
+        <h3 property="rdfs:label" datatype="xsd:string">SubGraphConfig</h3>
+        <dl>
+          <dt>Subclass of</dt>
+          <dd><a rel="rdfs:subClassOf" href="#GraphConfig">gvo:GraphConfig</a></dd>
+        </dl>
+        <footer>
+          <a rel="rdfs:isDefinedBy" href="#">Back to Top</a>
+        </footer>
+      </section>
+      <section id="ClusterConfig" about="#ClusterConfig" typeof="owl:Class">
+        <h3 property="rdfs:label" datatype="xsd:string">ClusterConfig</h3>
+        <dl>
+          <dt>Subclass of</dt>
+          <dd><a rel="rdfs:subClassOf" href="#SubGraphConfig">gvo:SubGraphConfig</a></dd>
+        </dl>
+        <footer>
+          <a rel="rdfs:isDefinedBy" href="#">Back to Top</a>
+        </footer>
+      </section>
+    </section>
+    <section id="properties">
+      <h2>Properties</h2>
+      <section>
+        <h3></h3>
+      </section>
+    </section>
+    <section id="datatypes">
+      <h2>Datatypes</h2>
+      <section>
+        <h3></h3>
+      </section>
+    </section>
+    <section id="individuals">
+      <h2>Individuals</h2>
+      <section>
+        <h3></h3>
+      </section>
+    </section>
+  </body>
+</html>
