@@ -38,6 +38,13 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rspec',   '~> 3.0'
 
   # stuff we use
-  spec.add_runtime_dependency 'rdf', '~> 3.0.2'
+  spec.add_runtime_dependency 'rdf',         '~> 3.0.12'
+  spec.add_runtime_dependency 'rest-client', '~> 2.1.0'
+  spec.add_runtime_dependency 'commander',   '~> 4.4.7'
+  spec.add_runtime_dependency 'tidy_ffi',    '~> 1.0.0'
+  spec.add_runtime_dependency 'nokogiri',    '~> 1.10.4'
+
+  # stuff i wrote
+  spec.add_runtime_dependency 'xml-mixup',   '~> 0.1.10'
   
 end

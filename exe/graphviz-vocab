@@ -13,11 +13,13 @@ Commander.configure do
   command :convert do |c|
     c.syntax      = 'convert --config FILE | [OPTIONS]'
     c.description = 'Converts the inputs and generates the vocabulary.'
+
     c.option '-a', '--attributes FILE', 'Location of attribute source'
     c.option '-t', '--types FILE',      'Location of datatype source'
     c.option '-v', '--vocab FILE',      'Location of vocabulary stub'
     c.option '-o', '--output DIR',      'Output target directory'
     c.option '-c', '--config FILE',     'Supply a YAML config file instead'
+
     c.action do |args, opts|
       # first check config
       
@@ -27,15 +29,23 @@ Commander.configure do
         raise ArgumentError.new("No YAML configuration file at #{cfg}") unless
           cfg.readable?
 
+        # XXX this may blow up on malformed YAML
         require 'yaml'
         cfg = YAML.load_file(cfg)
-        cfg.transform_keys!(&:to_sym)
-        warn cfg.inspect
+
+        # conditionally overwrite the options with whatever was in the yaml
+        cfg.each { |k, v| opts.__hash__[k] ||= v }
       end
-      opth = opts.__hash__.transform_keys(&:to_sym).reject do |k, v|
+
+      # commander options are some goofy struct thing so we make it a hash
+      opth = opts.__hash__.transform_keys(&:to_sym).reject do |k, _|
         k == :config
       end
-      # next overwrite any config file entries with command-line options
+
+      # match option keys with constructor inputs
+      opth[:attrs] = opth.delete(:attributes)
+
+      # aaand run it
       gvv = GraphViz::Vocab.new(**opth)
 
       gvv.run
