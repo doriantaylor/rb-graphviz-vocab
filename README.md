@@ -1,4 +1,4 @@
-# Graphviz::Vocab
+# GraphViz::Vocab
 
 `graphviz-vocab` is a simple command-line program that will consume
 the source documents for [GraphViz](https://www.graphviz.org/)
